@@ -30,8 +30,34 @@ namespace ConsoleApplication
             Console.WriteLine($"Today is {currentDate.ToString("d")}");
 
             //5
-            var christmas = new DateTime(currentDate.Year,12, 25);
-            Console.WriteLine($"date until Christmas {christmas}");
+            //Get these values however you like.
+            DateTime daysLeft = DateTime.Parse("12/25/2019 12:00:01 AM");
+            DateTime startDate = DateTime.Now;
+
+            //Calculate countdown timer.
+            TimeSpan t = daysLeft - startDate;
+            string countDown = string.Format("{0} Days, {1} Hours, {2} Minutes, {3} Seconds til launch.", t.Days, t.Hours, t.Minutes, t.Seconds);
+            Console.WriteLine($"Days until Christmas {countDown}");
+
+            //6
+            double width, height, woodLength, glassArea;
+            string widthString, heightString;
+
+            widthString = Console.ReadLine();
+            width = double.Parse(widthString);
+
+            heightString = Console.ReadLine();
+            height = double.Parse(heightString);
+
+            woodLength = 2 * (width + height) * 3.25;
+
+            glassArea = 2 * (width * height);
+
+            Console.WriteLine("The length of the wood is " +
+            woodLength + " feet");
+            Console.WriteLine("The area of the glass is " +
+            glassArea + " square metres");
+
             //7
             Console.WriteLine("Press any key to end: ");
             Console.ReadKey();
